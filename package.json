@@ -1,0 +1,20 @@
+{
+  "name": "strikezone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "StrikeZone — real-time multiplayer browser FPS (Team Deathmatch)",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "npm run build -w client",
+    "start": "node server/src/index.js",
+    "dev:server": "node --watch server/src/index.js",
+    "test:e2e": "node test/multiplayer_test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

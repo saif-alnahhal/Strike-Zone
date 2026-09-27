@@ -1,0 +1,13 @@
+# Render.com blueprint — deploy StrikeZone as a single web service.
+# On Render: New + → Blueprint → pick the repo containing this file.
+services:
+  - type: web
+    name: strikezone
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: CORS_ORIGIN
+        value: "*"
